@@ -1,0 +1,215 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/font-awesome/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap-social/bootstrap-social.css') }}" type="text/css">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+	<!-- endbuild -->
+    <title>Pneumonia Detection Tool</title> 
+
+</head>
+
+<body>
+	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"> Pneumonia Detection &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home"></span> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus"><span class="fa fa-info"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./menu"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>       
+        </div>
+	</nav>
+	
+	
+	<header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-9 col-sm-6">
+                    <h1>Pneumonia Detection - CNN</h1>
+                    <p>This web app can accurately detect Pneumonia from the uploaded X-Ray image. The Convolution Neural-Network (CNN) model employed is a deep learning model was built entirely using python. It is hosted using the Flask micro-web platform.</p>
+                </div>
+                <div class="col-4 col-sm align-self-flex-end">
+                    <img src="{{ url_for('static', filename='image/download.jpg') }}" class="img-fluid img-thumbnail" align="right">
+				</div>
+				<div class="col-12 col-sm align-self-center">
+					<br>
+                    <a role="button" class="btn btn-sm btn-warning" id="myBtn" href="#translate"><h5>Detect Pneumonia</h5>
+                    </a>
+                </div>
+            </div> 
+        </div>
+	</header>
+	<br>
+
+	<div class="container">
+		<h2>Model built using:</h2>
+        <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide responsive" data-ride="carousel" data-interval=3000>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                src="{{ url_for('static', filename='image/2.png') }}" alt="Uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Keras</h2>
+                             <p class="d-none d-sm-block"style="font-size:22px">Keras is an open-source neural-network library written in Python. It is capable of running on top of TensorFlow, Microsoft Cognitive Toolkit, R, Theano, or PlaidML. Designed to enable fast experimentation with deep neural networks, it focuses on being user-friendly, modular, and extensible.</p>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                            src="{{ url_for('static', filename='image/numpy.png') }}" alt="numpy">
+                            <div class="carousel-caption d-none d-md-block des" style="font-size:22px">
+								<h2> Numpy </h2>
+								<p>NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                            src="{{ url_for('static', filename='image/Tensorflow.png') }}" alt="Tensor-flow">
+                            <div class="carousel-caption d-none d-md-block" style="font-size:22px">
+                             <h2>Tensorflow</h2>
+                             <p class="d-none d-sm-block">TensorFlow is a free and open-source software library for dataflow and differentiable programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.
+                             </p>
+                           </div>
+						</div>
+						
+                        <ol class="carousel-indicators">
+                            <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#mycarousel" data-slide-to="1"></li>
+                            <li data-target="#mycarousel" data-slide-to="2"></li>
+                        </ol>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+				</div> 
+				<br>
+            </div>
+		</div>
+<div id="translate">
+	<br>
+</div>
+
+
+<div id="content" style="margin-top:6em">
+    <div class="container">
+        <div class="col-12">
+            <div class="card card-body bg-light">
+                <blockquote class="blockquote">
+                    <p class="mb-0">This application will work perfectly only if you upload a clean X-Ray image. This app might not work for low quality images or photo scanned, including those shared on whatsapp which reduces the quality.</p><br>
+                    <footer class="blockquote-footer">Your output can only be either of these two:&nbsp;<i> a) &nbsp;Normal &nbsp;or&nbsp; b) &nbsp;Has Pneumonia .</i>
+                    </footer>
+                    </blockquote>
+                </div>
+			</div>
+            <br>
+            <div class="col-sm-6">
+				<br>
+					<h4>Upload X-Ray Image Below:</h4>
+			    <form action = "http://localhost:5000/" id="upload-file" method="post" enctype="multipart/form-data">
+				<label for="imageUpload" class="btn btn-lg upload-label">
+					Choose...
+				</label>
+				<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+                </form>
+            </div>
+			
+
+			<div class="image-section" style="display:none;">
+				<div class="img-preview">
+					<div id="imagePreview">
+					</div>
+				</div>
+				<div>
+					<button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
+				</div>
+			</div>
+
+			<div class="loader" style="display:none;"></div>
+
+			<h3>
+				<span id="result"> </span><br><br>
+			</h3>
+
+        </div>
+    </div>
+</div>
+</div>
+	
+	<footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="/contactus">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+		              <i class="fa fa-phone fa-lg"></i>    +852 1234 5678<br>
+                      <i class="fa fa-fax fa-lg"></i>+852 8765 4321<br>
+                      <i class="fa fa-envelope fa-lg"></i> 
+                      <a href="mailto:confusion@food.net">confusion@food.net</a>
+
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2020 Pneumonia Detection Tool</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
+    <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='node_modules/popper.js/dist/umd/popper.min.js') }}" type="text/javascript"></script> 
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script> 
+    <script src="{{ url_for('static', filename='javascript2/main.js') }}" type="text/javascript"></script>
+    <!-- endbuild --> 
+</body>
+
+
+
+</html>

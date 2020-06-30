@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- Required meta tags always come first -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/font-awesome/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap-social/bootstrap-social.css') }}" type="text/css">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+	<!-- endbuild -->
+
+    <title>About this app</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="/"> Pneumonia Detection &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/"><span class="fa fa-home"></span> Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href=".#"><span class="fa fa-info"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/menu"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactus"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>       
+        </div>
+	</nav>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-9 col-sm-6">
+                    <h1>Pneumonia Detection - CNN</h1>
+                    <p>This web app can accurately detect Pneumonia from the uploaded X-Ray image. The Convolution Neural-Network (CNN) model employed is a deep learning model was built entirely using python. It is hosted using the Flask micro-web platform.</p>
+                </div>
+                <div class="col-4 col-sm align-self-flex-end">
+                    <img src="{{ url_for('static', filename='image/download.jpg') }}" class="img-fluid img-thumbnail" align="right">
+				</div>
+            </div> 
+        </div>
+	</header>
+
+    <div class="container">
+        <div class="row ">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
+            <div class="row col-12">
+               <h3>About</h3>
+               <hr>
+            </div>
+            <div class="container">
+                <div class="row row-content col-12">
+                    <h3>Problems faced by people:</h3>
+                    <p style="font-size:17px"><br>Patient suffering from Pneumonia goes to the hospital to take an X-ray image waits for the doctor and then the doctor will checkv<br>the X-ray
+                        then he decides whether the person has pneumonia or not. The results are not only concluded based on just seeing the X-ray images <br>but furthermore,
+                     tests were conducted on the patient to verify the results of the doctor. The process is time-consuming and if the patient has severe pneumonia  or not
+                     he has to wait several days to get the test results. The financial costs include the doctors fees and travel fees. <br><br>But in recent developments of the artificial intelligence and the computational powers of the computers
+                     have increased it helps in predicting pneumonia by just passing the X-ray image as an input to our model.</p>
+                </div>
+                
+                <br>
+            </div>
+            <div class="container">
+                <div class="row-content"><h3>The objective of the app:</h3><br>
+                  <div class="row col-12">
+                    <p style="font-size:17px">The main objective of this project is to help the doctors to predict the pneumonia disease more accurately using a deep learning model.
+                        <br>The objective is not only to help the doctors but also to the patients to verify whether they have pneumonia or not. By using this model
+                        <br>we can precisely predict pneumonia.<br><br> A convolutional neural network model is built from scratch to extract features from a given chest X-ray
+                        image and classify it to determine <br>if a person is infected with pneumonia. a web is built where the user can upload the x - ray image and
+                        the result is shown on the UI</p>
+                  </div>  
+                </div>
+           </div>
+        </div>
+        <div class="container">
+            <div class=""><br><br><h3>Accuracy of 97%:</h3><br>
+              <div class="row col-12">
+                <a style="font-size:17px">This model has an <i>amazing accuracy of over 97%</i>, achieved through rigorous neural networks.<br><br><br></a>
+              </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="./aboutus">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="./contactus">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+		              <i class="fa fa-phone fa-lg"></i>    +852 1234 5678<br>
+                      <i class="fa fa-fax fa-lg"></i>+852 8765 4321<br>
+                      <i class="fa fa-envelope fa-lg"></i> 
+                      <a href="mailto:confusion@food.net">confusion@food.net</a>
+
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2020 Pneumonia Detection Tool</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
+    <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='node_modules/popper.js/dist/umd/popper.min.js') }}" type="text/javascript"></script> 
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script> 
+    <script src="{{ url_for('static', filename='javascript2/main.js') }}" type="text/javascript"></script>
+    <!-- endbuild -->
+    
+</body>
+
+</html>
